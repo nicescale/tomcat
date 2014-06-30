@@ -6,11 +6,11 @@ Apache tomcat application server
 Build
 -----
 
-  docker build -t nicescale/tomcat:7.0 .
+  docker build -t nicescale/tomcat .
 
 Run
 -----
 
-  docker run -d nicescale/tomcat:7.0
+  docker run -d nicescale/tomcat
 
 You can use volume to manage code or logs, view ./run.sh
