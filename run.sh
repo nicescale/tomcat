@@ -1,8 +1,6 @@
 #!/bin/bash
 
-. path.ini
+cron
 
-mkdir -p $HOME/data
-mkdir -p $HOME/log
-
-docker run  -d -v $HOME/data:$data -v $HOME/log:$log -p 8080:8080 nicescale/tomcat
+source /etc/default/tomcat7 && 
+exec /usr/share/tomcat7/bin/catalina.sh run
