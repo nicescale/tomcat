@@ -10,5 +10,6 @@ CATALINA_HOME=/usr/share/tomcat7\n\
 CATALINA_TMPDIR=/tmp/tomcat7-tomcat7-tmp" >> /usr/share/tomcat7/bin/setenv.sh
 
 ADD   . /opt/nicedocker
+ADD   crontab /etc/crontab
 EXPOSE  8080
 CMD  ["/opt/nicedocker/run.sh"]
