@@ -6,6 +6,8 @@ envfile=${CONF_DIR-:/etc/tomcat7}/env
 
 setenv_file=${CONF_DIR-:/etc/tomcat7}/setenv.sh
 
+source /etc/default/tomcat7
+
 [ -f $envfile ] &&
 . $envfile &&
 eval `cat $envfile|grep -v ^#|grep '='|cut -f1 -d'='|xargs echo export`
@@ -14,5 +16,4 @@ eval `cat $envfile|grep -v ^#|grep '='|cut -f1 -d'='|xargs echo export`
 . $setenv_file &&
 eval `cat $setenv_file|grep -v ^#|grep '='|cut -f1 -d'='|xargs echo export`
 
-source /etc/default/tomcat7 && 
 exec /usr/share/tomcat7/bin/catalina.sh run
